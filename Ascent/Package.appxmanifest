@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
+  <Identity Name="24363ILPInnovations.MyAscent" Publisher="CN=68BEBDF5-CAF5-4ECA-BB93-D4BABFD925BF" Version="1.1.0.1" />
+  <mp:PhoneIdentity PhoneProductId="0865b2d0-10b9-48e0-ba09-a2faa1cab2a6" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>My Ascent</DisplayName>
+    <PublisherDisplayName>ILP Innovations</PublisherDisplayName>
+    <Logo>Assets\Icon_120.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.3.1</OSMinVersion>
+    <OSMaxVersionTested>6.3.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Ascent.App">
+      <m3:VisualElements DisplayName="My Ascent" Square150x150Logo="Assets\Icon_360.png" Square44x44Logo="Assets\Icon_106.png" Description="My Ascent App" ForegroundText="light" BackgroundColor="transparent">
+        <m3:DefaultTile Square71x71Logo="Assets\Icon_170.png">
+          <m3:ShowNameOnTiles>
+            <m3:ShowOn Tile="square150x150Logo" />
+          </m3:ShowNameOnTiles>
+        </m3:DefaultTile>
+        <m3:SplashScreen Image="Assets\SplashScreen.png" />
+      </m3:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClientServer" />
+  </Capabilities>
+</Package>

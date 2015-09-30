@@ -1,0 +1,22 @@
+﻿<Page
+    x:Class="Ascent.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Ascent"
+    xmlns:design="using:Ascent.Design"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center">
+            <TextBlock Margin="0,0,0,30" Text="MASTER PANEL" TextAlignment="Center" FontSize="20"/>
+            <Button Width="200" Content="Get Region" Tag="REGION" Click="buttonClickHandler" />
+            <Button Width="200" Content="Schedule Page" Tag="SCHEDULE" Click="buttonClickHandler" />
+            <Button Width="200" Content="Register Page" Tag="REGISTER" Click="buttonClickHandler" />
+            <Button Width="200" Content="Show Feedback" Tag="FEEDBACK" Click="buttonClickHandler" />
+        </StackPanel>
+        <design:FeedbackControl Opacity="0" x:Name="feedControl" VerticalAlignment="Bottom"/>
+    </Grid>
+</Page>

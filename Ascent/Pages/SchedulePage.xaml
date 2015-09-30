@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="Ascent.Pages.SchedulePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Ascent.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:design="using:Ascent.Design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Margin="10,0,10,10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="Ascent Schedule" Style="{StaticResource TitleTextBlockStyle}" TextAlignment="Center" FontSize="26.667" Foreground="{ThemeResource PhoneAccentBrush}"/>
+            <Grid Margin="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="52*" />
+                    <ColumnDefinition Width="126*" />
+                    <ColumnDefinition Width="151*"/>
+                    <ColumnDefinition Width="52*"/>
+                </Grid.ColumnDefinitions>
+            	<TextBlock TextWrapping="Wrap" Text="Date" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center" Grid.ColumnSpan="2" Height="24" Margin="0,17,74.5,17"/>
+            	<DatePicker x:Name="dateControl" VerticalAlignment="Center" Grid.Column="1" Margin="3.333,0,2.5,0" DateChanged="dateControl_DateChanged"/>
+            	<Button x:Name="btnGet" Content="Get Schedule" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Click="Button_Click" />
+            	<Button Click="Button_Click_1" Content="?" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="0" MinHeight="57.5" Grid.Column="4" Background="#FF43B431"/>
+            </Grid>
+            <ProgressBar x:Name="progressBar" IsIndeterminate="True" Visibility="Collapsed"/>
+        </StackPanel>
+        <Grid Grid.Row="1" Margin="0">
+            <ScrollViewer>
+                <ListView SelectionChanged="listSchedule_SelectionChanged" ItemsSource="{Binding}" ItemTemplate="{StaticResource listScheduleItemTemplate}" x:Name="listSchedule">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
+            </ScrollViewer>
+        </Grid>
+        <design:FeedbackControl Grid.RowSpan="99" x:Name="feedControl" VerticalAlignment="Bottom"/>
+    </Grid>
+</Page>
